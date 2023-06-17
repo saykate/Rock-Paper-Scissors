@@ -58,17 +58,19 @@ let playRound = (player, computer) => {
     }
 }
 
-if (roundCount === 5) {
-    if (playerScore > compScore) {
-        return "You win! You beat the computer!!! "
-    } else if (compScore > playerScore) {
-        return "Sorry, you lose!"
-    } else {
-        return "It's a tie!"
-    }
-} else {
-    roundCount++;
-}
+roundCount++;
+
+// if (roundCount === 5) {
+//     if (playerScore > compScore) {
+//         return "You win! You beat the computer!!! "
+//     } else if (compScore > playerScore) {
+//         return "Sorry, you lose!"
+//     } else {
+//         return "It's a tie!"
+//     }
+// } else {
+//     roundCount++;
+// }
 
 console.log(playRound(playerInput, compBet()));
 console.log(playerScore);
