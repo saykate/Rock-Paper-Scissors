@@ -60,24 +60,24 @@ let playRound = (player, computer) => {
 
 let endOfGame = () => {
     if (playerScore > compScore) {
-        return "You win! You beat the computer!!! "
+        return "GAME OVER. You win the game! You beat the computer!!! "
     } else if (compScore > playerScore) {
-        return "Sorry, you lose!"
+        return "GAME OVER. Sorry, you lost the game!"
     } else {
-        return "It's a tie!"
+        return "GAME OVER. It's a tie!"
     }
 }
 
-if (roundCount === 5) {
-    console.log(endOfGame());
-} else {
-    roundCount++;
-}
+roundCount++;
 
 console.log(playRound(playerInput, compBet()));
 console.log(playerScore);
 console.log(compScore);
 console.log(roundCount);
+
+if (roundCount === 5) {
+    console.log(endOfGame());
+    }
 }
 
 
