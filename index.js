@@ -12,12 +12,12 @@ while (playerInput !== "rock" && playerInput !== "paper" && playerInput !== "sci
     playerInput = prompt("Enter your choice: rock, paper or scissors")
 };
 
-console.log(playerInput);
+console.log("Player's Choice: ", playerInput);
 
 //get Computer's bet:
 let compRandom = Math.floor((Math.random() * 3) + 1)
 
-console.log(compRandom);
+// console.log(compRandom);
 
 //convert random number into a valid choice:
 let compBet = () => {
@@ -29,7 +29,7 @@ if (compRandom === 1) {
     return "scissors"
 }
 }
-console.log(compBet());
+console.log("Computer's Choice: ", compBet());
 
 //play round:
 let playRound = (player, computer) => {
@@ -71,9 +71,10 @@ let endOfGame = () => {
 roundCount++;
 
 console.log(playRound(playerInput, compBet()));
-console.log(playerScore);
-console.log(compScore);
-console.log(roundCount);
+console.log("Player's Score: ", playerScore);
+console.log("Computer's Score: ", compScore);
+console.log("Round: ", roundCount);
+console.log("--------------------");
 
 if (roundCount === 5) {
     console.log(endOfGame());
