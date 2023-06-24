@@ -40,8 +40,6 @@ scissors.addEventListener("click", () => {
     startGame();
 });
 
-const startGame = () => {
-
 //get Computer's bet:
 let compRandom = Math.floor((Math.random() * 3) + 1)
 
@@ -56,6 +54,13 @@ if (compRandom === 1) {
 }
 }
 
+let resetGame = () => {
+    welcome.classList.remove('hidden');
+    gamePage.classList.add('hidden');
+    enterButton.textContent = 'Play Again?'
+}
+
+const startGame = () => {
 //play round:
 let playRound = (player, computer) => {
     if (player === computer) {
@@ -83,11 +88,6 @@ let playRound = (player, computer) => {
     }
 };
 
-let resetGame = () => {
-    welcome.classList.remove('hidden');
-    gamePage.classList.add('hidden');
-}
-
 let endOfGame = () => {
     if (playerScore > compScore) {
        roundText.textContent = "GAME OVER. You win the game! You beat the computer!!! ";
@@ -99,7 +99,7 @@ let endOfGame = () => {
     playerScore = 0; 
     compScore = 0;
     roundCount = 0;
-    resetGame()
+    resetGame();
 };
 
 playRound(playerInput, compBet());
