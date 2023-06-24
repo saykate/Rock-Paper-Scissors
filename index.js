@@ -74,7 +74,7 @@ let playRound = (player, computer) => {
 
 let endOfGame = () => {
     if (playerScore > compScore) {
-        roundText.textContent = "GAME OVER. You win the game! You beat the computer!!! "
+       roundText.textContent = "GAME OVER. You win the game! You beat the computer!!! "
     } else if (compScore > playerScore) {
         roundText.textContent = "GAME OVER. Sorry, you lost the game!"
     } else {
@@ -91,7 +91,7 @@ compText.textContent = `Computer's Score: ${compScore}`;
 roundText.textContent = `Round Count: ${roundCount}`;
 
 if (playerScore === 5 || compScore === 5) {
-    endOfGame();
+    return endOfGame();
     }
 }
 
