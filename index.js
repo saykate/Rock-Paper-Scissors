@@ -83,23 +83,23 @@ let playRound = (player, computer) => {
     }
 };
 
+let resetGame = () => {
+    welcome.classList.remove('hidden');
+    gamePage.classList.add('hidden');
+}
+
 let endOfGame = () => {
     if (playerScore > compScore) {
        roundText.textContent = "GAME OVER. You win the game! You beat the computer!!! ";
-       playerScore = 0; 
-       compScore = 0;
-       roundCount = 0;
     } else if (compScore > playerScore) {
         roundText.textContent = "GAME OVER. Sorry, you lost the game!";
-        playerScore = 0; 
-        compScore = 0;
-        roundCount = 0;
     } else {
         roundText.textContent = "GAME OVER. It's a tie!";
-        playerScore = 0; 
-        compScore = 0;
-        roundCount = 0;
     }
+    playerScore = 0; 
+    compScore = 0;
+    roundCount = 0;
+    resetGame()
 };
 
 playRound(playerInput, compBet());
