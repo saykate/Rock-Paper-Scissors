@@ -74,11 +74,11 @@ let playRound = (player, computer) => {
 
 let endOfGame = () => {
     if (playerScore > compScore) {
-        return "GAME OVER. You win the game! You beat the computer!!! "
+        roundText.textContent = "GAME OVER. You win the game! You beat the computer!!! "
     } else if (compScore > playerScore) {
-        return "GAME OVER. Sorry, you lost the game!"
+        roundText.textContent = "GAME OVER. Sorry, you lost the game!"
     } else {
-        return "GAME OVER. It's a tie!"
+        roundText.textContent = "GAME OVER. It's a tie!"
     }
 };
 
@@ -90,8 +90,8 @@ playerText.textContent = `Your Score: ${playerScore}`;
 compText.textContent = `Computer's Score: ${compScore}`;
 roundText.textContent = `Round Count: ${roundCount}`;
 
-if (roundCount === 5) {
-    console.log(endOfGame());
+if (playerScore === 5 || compScore === 5) {
+    endOfGame();
     }
 }
 
