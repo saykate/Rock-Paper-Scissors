@@ -42,6 +42,15 @@ scissors.addEventListener("click", () => {
     startGame();
 });
 
+let resetGame = () => {
+    welcome.classList.remove('hidden');
+    welcomePara.classList.add('hidden')
+    gamePage.classList.add('hidden');
+    enterButton.textContent = 'Play Again?'
+}
+
+const startGame = () => {
+
 //get Computer's bet:
 let compRandom = Math.floor((Math.random() * 3) + 1)
 
@@ -55,16 +64,9 @@ if (compRandom === 1) {
     return "scissors"
 }
 }
+console.log("computer Bet: ", compBet())
 
-let resetGame = () => {
-    welcome.classList.remove('hidden');
-    welcomePara.classList.add('hidden')
-    gamePage.classList.add('hidden');
-    enterButton.textContent = 'Play Again?'
-}
-
-const startGame = () => {
-//play round:
+//Play round
 let playRound = (player, computer) => {
     if (player === computer) {
         compScore++;
@@ -93,11 +95,11 @@ let playRound = (player, computer) => {
 
 let endOfGame = () => {
     if (playerScore > compScore) {
-       welcomeH1.textContent = "GAME OVER. You win the game! You beat the computer!!! ";
+       welcomeH1.textContent = `GAME OVER. You win the game! You beat the computer!!!`;
     } else if (compScore > playerScore) {
-        welcomeH1.textContent = "GAME OVER. Sorry, you lost the game!";
+        welcomeH1.textContent = `GAME OVER. Sorry, you lost the game.`;
     } else {
-        welcomeH1.textContent = "GAME OVER. It's a tie!";
+        welcomeH1.textContent = `GAME OVER. It's a tie!`;
     }
     playerScore = 0; 
     compScore = 0;
