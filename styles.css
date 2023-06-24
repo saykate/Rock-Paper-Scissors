@@ -1,0 +1,43 @@
+.button-box {
+    background-color: #f8e7ca;
+    padding: 3rem 6rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: .5rem;
+    max-width: 15rem;
+    color: #bfd1cb;
+    background-color: #c3766e;
+    border: 1px solid #2b5d4c;
+    border-radius: 15px;
+    flex: 1;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2b5d4c;
+}
+
+.score-box, .round-count {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.75rem;
+    background-color: #bad6ce;
+    padding: 2rem 0;
+    color: #2b5d4c;
+}
+
+.round-count {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 28rem){
+    button, .score-box, .round-count {
+        font-size: 1rem;
+    }
+}
