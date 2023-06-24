@@ -2,6 +2,17 @@ let roundCount = 0;
 let playerScore = 0; 
 let compScore = 0; 
 
+let enterButton = document.querySelector('.welcome button');
+let gamePage = document.querySelector('div.game-page');
+let welcome = document.querySelector('div.welcome');
+
+gamePage.classList.add('hidden');
+
+enterButton.addEventListener('click', () => {
+   welcome.classList.add('hidden');
+   gamePage.classList.remove('hidden');
+});
+
 let playerText = document.querySelector('div.player p');
 let compText = document.querySelector('div.comp p');
 let roundText = document.querySelector('div.round-count p');

@@ -1,9 +1,29 @@
+* {
+    margin: 0;
+}
+
+.welcome {
+    height: 100vh;
+    padding: 5em 2em;
+    background-color: #241615;
+    color: #bfd1cb;
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.welcome p {
+    padding: 3em;
+    font-size: 2rem;
+}
+
 .button-box {
     background-color: #f8e7ca;
     padding: 3rem 6rem;
+    height: 30vh;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -11,6 +31,7 @@ button {
     font-size: 1.5rem;
     padding: .5rem;
     max-width: 15rem;
+    max-height: 3rem;
     color: #bfd1cb;
     background-color: #c3766e;
     border: 1px solid #2b5d4c;
@@ -23,21 +44,48 @@ button:hover {
     background-color: #2b5d4c;
 }
 
-.score-box, .round-count {
+.score-box {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh;
     font-size: 1.75rem;
     background-color: #bad6ce;
-    padding: 2rem 0;
     color: #2b5d4c;
 }
 
+.scores {
+    height: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+}
+
 .round-count {
-    font-size: 1.5rem;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 4rem;
+}
+
+.hidden {
+    display: none;
+/*     
+    .button-box {
+        height: 30vh;
+    }
+    .score-box {
+        height: 70vh;
+    } */
 }
 
 @media (max-width: 28rem){
-    button, .score-box, .round-count {
+    .welcome {
+        font-size: 1rem;
+    }
+    button, .score-box, .round-count, .welcome, .welcome > p {
         font-size: 1rem;
     }
 }
