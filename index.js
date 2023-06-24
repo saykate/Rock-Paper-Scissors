@@ -2,16 +2,11 @@ let roundCount = 0;
 let playerScore = 0; 
 let compScore = 0; 
 
+let welcome = document.querySelector('div.welcome');
+let welcomeH1 = document.querySelector('div.welcome h1');
+let welcomePara = document.querySelector('div.welcome p');
 let enterButton = document.querySelector('.welcome button');
 let gamePage = document.querySelector('div.game-page');
-let welcome = document.querySelector('div.welcome');
-
-gamePage.classList.add('hidden');
-
-enterButton.addEventListener('click', () => {
-   welcome.classList.add('hidden');
-   gamePage.classList.remove('hidden');
-});
 
 let playerText = document.querySelector('div.player p');
 let compText = document.querySelector('div.comp p');
@@ -20,6 +15,13 @@ let roundText = document.querySelector('div.round-count p');
 playerText.textContent = `Your Score: 0`;
 compText.textContent = `Computer's Score: 0`;
 roundText.textContent = `Round Count:`;
+
+gamePage.classList.add('hidden');
+
+enterButton.addEventListener('click', () => {
+   welcome.classList.add('hidden');
+   gamePage.classList.remove('hidden');
+});
 
 //get Player's bet:
 let playerInput = '';
@@ -56,6 +58,7 @@ if (compRandom === 1) {
 
 let resetGame = () => {
     welcome.classList.remove('hidden');
+    welcomePara.classList.add('hidden')
     gamePage.classList.add('hidden');
     enterButton.textContent = 'Play Again?'
 }
@@ -90,11 +93,11 @@ let playRound = (player, computer) => {
 
 let endOfGame = () => {
     if (playerScore > compScore) {
-       roundText.textContent = "GAME OVER. You win the game! You beat the computer!!! ";
+       welcomeH1.textContent = "GAME OVER. You win the game! You beat the computer!!! ";
     } else if (compScore > playerScore) {
-        roundText.textContent = "GAME OVER. Sorry, you lost the game!";
+        welcomeH1.textContent = "GAME OVER. Sorry, you lost the game!";
     } else {
-        roundText.textContent = "GAME OVER. It's a tie!";
+        welcomeH1.textContent = "GAME OVER. It's a tie!";
     }
     playerScore = 0; 
     compScore = 0;
