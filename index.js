@@ -95,11 +95,14 @@ let playRound = (player, computer) => {
 
 let endOfGame = () => {
     if (playerScore > compScore) {
-       welcomeH1.textContent = `GAME OVER. You win the game! You beat the computer!!!`;
+       welcomeH1.textContent = `GAME OVER.
+                You win the game! You beat the computer!!!`;                    
     } else if (compScore > playerScore) {
-        welcomeH1.textContent = `GAME OVER. Sorry, you lost the game.`;
+        welcomeH1.textContent = `GAME OVER.
+                         Sorry, you lost the game.`;             
     } else {
-        welcomeH1.textContent = `GAME OVER. It's a tie!`;
+        welcomeH1.textContent = `GAME OVER.
+                                It's a tie!`;       
     }
     playerScore = 0; 
     compScore = 0;
