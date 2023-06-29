@@ -44,7 +44,6 @@ scissors.addEventListener("click", () => {
 
 let resetGame = () => {
     welcome.classList.remove('hidden');
-    welcomePara.classList.add('hidden')
     gamePage.classList.add('hidden');
     enterButton.textContent = 'Play Again?'
 }
@@ -95,11 +94,14 @@ let playRound = (player, computer) => {
 
 let endOfGame = () => {
     if (playerScore > compScore) {
-       welcomeH1.textContent = `GAME OVER. You win the game! You beat the computer!!!`;
+       welcomeH1.textContent = `You win the game!`;
+       welcomePara.textContent = `GAME OVER.`;
     } else if (compScore > playerScore) {
-        welcomeH1.textContent = `GAME OVER. Sorry, you lost the game.`;
+        welcomeH1.textContent = "Sorry, you lost the game.";
+        welcomePara.textContent = `GAME OVER.`;
     } else {
-        welcomeH1.textContent = `GAME OVER. It's a tie!`;
+        welcomeH1.textContent = `It's a tie!`;
+        welcomePara.textContent = `GAME OVER.`;
     }
     playerScore = 0; 
     compScore = 0;
